@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{master.html}">
+
+<head>
+	<meta charset="utf-8">
+	<title>Cine Trailers | Registrar Pelicula</title>
+
+</head>
+
+<body>
+
+	<div layout:fragment="content" style="margin: 0 auto; width: 80%;">
+		<br>
+		<h2>Registro de pelicula</h2>
+		<br>
+		<!-- Insertando formulario -->
+		<div th:insert="admin/form :: form"></div>
+	</div>
+
+</body>
+
+</html>

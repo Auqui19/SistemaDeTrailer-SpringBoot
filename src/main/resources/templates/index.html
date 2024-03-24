@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{master.html}">
+
+<head>
+	<meta charset="utf-8">
+	<title>Cine Trailers | Inicio</title>
+</head>
+
+<body>
+
+	<!-- CONTENIDO INDEX -->
+	<div layout:fragment="content">
+		<div class="contenido-index">
+			<div class="titulo">
+				<h1>Ver nuevos tráileres de películas y series</h1>
+			</div>
+			<div class="contendor-peli">
+				<div class="cartas-peli" th:each="pelicula : ${ultimasPeliculas}" th:object="${pelicula}">
+					<a th:href="@{/peliculas/{id}(id=*{idPelicula})}" class="card-peli">
+						<img th:src="@{/assets/{filename}(filename=*{rutaPortada})}" th:alt="*{titulo}">
+						<div class="carta-info">
+							<h2 class="carta-titulo" th:text="*{titulo}"></h2>
+							<p th:text="*{#temporals.format(fechaEstreno,'dd/MM/yyyy')}" class="carta-fecha"></p>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

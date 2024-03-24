@@ -1,0 +1,296 @@
+:root {
+	--color-negro: #1F1F26;
+	--color-azul: #416BBF;
+	--color-verder: #89D9AB;
+	--color-marron: #A6654E;
+	--color-rojo: #F26666;
+	--color-blanco : #FEFEFE;
+}
+
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	scroll-behavior: smooth !important;
+}
+
+body {
+	left: 0;
+	top: 0;
+	background-color: var(--color-negro) ;
+	font-family: "Montserrat", sans-serif;
+}
+
+/*---------- SCROLL ----------*/
+body::-webkit-scrollbar {
+	width: 7px;
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: var(--color-blanco);
+	border-radius: 4px;
+}
+
+::selection {
+	background: var(--color-verder);
+}
+
+/*---------- TODO DENTRO DEL CONTENERDOR ----------*/
+.contenedor {
+	color: var(--color-blanco);
+	width: 80%;
+	margin: auto;
+}
+
+.contenedor a {
+	color: var(--color-blanco);
+}
+
+.banner {
+	font-weight: bolder;
+	font-size: 20px;
+	color: var(--color-blanco);
+	background-color: var(--color-rojo);
+	padding: 6px 10px;
+	border-radius: 4px;
+}
+
+.navbar {
+	height: 80px;
+	display: flex;
+	align-items: center;
+}
+
+.navbar-contenedor {
+	font-size: 15px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.navbar-menu ul {
+	display: flex;
+	list-style: none;
+}
+
+.navbar-menu ul li {
+	margin: 0px 15px;
+	text-decoration: none;
+}
+
+.navbar-menu ul li a,
+.lista-guardado {
+	display: flex;
+	align-items: center;
+}
+
+.navbar-menu ul li i,
+.lista-guardado i {
+	font-size: 14px;
+	margin: 0px 5px;
+}
+
+.main-contenido {
+	margin: 20px 0px;
+}
+
+
+/*---------- FOOTER ----------*/
+footer {
+	margin-top: 50px;
+	font-size: 13px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 150px;
+	gap: 15px;
+}
+
+/*---------- CONTENIDO INDEX ----------*/
+.contenido-index {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.contenido-index .titulo {
+	font-size: 14px;
+	color: var(--color-rojo);
+}
+
+.contendor-peli {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	gap: 15px;
+}
+
+.carta-info {
+	height: 85px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 10px 0px;
+}
+
+.card-peli h2 {
+	font-size: 14px;
+}
+
+.card-peli .carta-fecha {
+	font-size: 13px;
+	color: var(--color-verder);
+}
+
+.card-peli img {
+	width: 100%;
+	border-radius: 6px;
+	height: 250px;
+}
+/*---------- CONTENIDO PELICULAS ----------*/
+.contenido-peliculas{
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.input-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*---------- BUSQUEDA ----------*/
+.form-control {
+	margin: 25px 0px;
+	width: 550px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.btn {
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-left: 10px;
+    font-size: 16px;
+    background-color: var(--color-azul);
+    color: var(--color-blanco);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/*---------- PAGINACIO ----------*/
+.main-paginacion {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination li {
+	font-weight: bold;
+    display: inline-block;
+    margin: 0px 4px;
+    padding: 0px 10px;
+    background-color: var(--color-blanco);
+    border-radius: 3px;
+    color: var(--color-negro);
+}
+.pagination li:not(a) {
+    padding: 8px 12px;
+}
+.pagination li a {
+    display: contents;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: var(--color-negro);
+    border-radius: 3px;
+}
+
+/*---------- CONTENIDO PELICULAS-ADMIN ----------*/
+.contenido-admin{
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+/*---------- TABLA ----------*/
+
+.titulo-head{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 30px;
+}
+.tabla td:nth-child(2) {
+    max-width: 400px;
+}
+.tabla {
+    width: 100%;
+}
+.tabla th, .tabla td {
+	margin: 0px;
+    padding: 8px;
+   	border-bottom: 1px solid var(--color-blanco);
+}
+.tabla th {
+    font-weight: bold;
+    text-align: left;
+}
+.tabla td .acciones{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	
+}
+.tabla td a.editar,  .tabla td a.elimar{
+	 text-decoration: none;
+	 padding: 8px 10px;
+	 width: 80%;
+	 text-align: center;
+	 border-radius: 10px;
+}
+.tabla .info-peli{
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	justify-content: space-between;
+}
+.info-peli .titulo{
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.tabla .generos{
+	background-color: var(--color-azul);
+	padding: 6px 8px;
+	margin-right: 10px;
+	border-radius: 10px;
+}
+
+.tabla td a.editar {
+    background: var(--color-verder);
+    color: var(--color-negro);
+}
+.tabla td a.elimar {
+    background: var(--color-rojo);
+    color: var(--color-blanco);
+ 
+}
+
+.tabla img {
+    width: 100%;
+    border-radius: 6px;
+    height: 210px;
+}
+
+
+
+
+
+
+

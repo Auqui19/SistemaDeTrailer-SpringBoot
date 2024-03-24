@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{master.html}">
+
+<head>
+	<meta charset="utf-8">
+	<title>Veo Trailers | Peliculas y Series</title>
+
+
+</head>
+
+<body>
+
+	<!-- CONTENEDOR -->
+	<div layout:fragment="content">
+		<div class="contenido-peliculas">
+			<h1 class="titulo">Ver todas las películas y series</h1>
+			<div class="form-buscar">
+				<form action="#" method="get" th:action="@{/peliculas}" th:object="${searchForm}">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Buscar películas" th:field="*{term}">
+						<button class="btn" type="submit">Buscar</button>
+					</div>
+				</form>
+			</div>
+			<div class="contendor-peli">
+				<div class="cartas-peli" th:each="pelicula : ${ultimasPeliculas}" th:object="${pelicula}">
+					<a th:href="@{/peliculas/{id}(id=*{idPelicula})}" class="card-peli">
+						<img th:src="@{/assets/{filename}(filename=*{rutaPortada})}" th:alt="*{titulo}">
+						<div class="carta-info">
+							<h2 class="carta-titulo" th:text="*{titulo}"></h2>
+							<p th:text="*{#temporals.format(fechaEstreno,'dd/MM/yyyy')}" class="carta-fecha"></p>
+						</div>
+					</a>
+				</div>
+			</div>
+
+
+
+			<div class="contendor-peli">
+				<div class="cartas-peli" th:each="pelicula : ${peliculas}" th:object="${pelicula}">
+					<a th:href="@{/peliculas/{id}(id=*{idPelicula})}" class="card-peli" style="text-decoration: none;">
+						<img th:src="@{/assets/{filename}(filename=*{rutaPortada})}" th:alt="*{titulo}">
+						<div class="carta-info">
+							<h2 class="carta-titulo" th:text="*{titulo}"></h2>
+							<p th:text="*{#temporals.format(fechaEstreno,'dd/MM/yyyy')}" class="carta-fecha"></p>
+						</div>
+					</a>
+				</div>
+			</div>
+
+
+
+			<div class="main-paginacion" th:with="page=${peliculas}">
+				<div class="paginacion">
+					<div sd:pagination-sumary></div>
+					<div class="number">
+						<nav>
+							<ul class="pagination" sd:pagination="full"></ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

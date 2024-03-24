@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+	<meta charset="utf-8">
+
+</head>
+
+<body>
+
+	<div layout:fragment="form" style="margin: 0 auto; width: 80%;">
+		<form action="" method="post" th:object="${pelicula}" enctype="multipart/form-data">
+			<div>
+				<label for="titulo" class="">Titulo :</label>
+				<input type="text" id="titulo" placeholder="Digite el titulo" class="form-control" th:field="*{titulo}">
+				<div class="invalid-feedback" th:if="${#fields.hasErrors('titulo')}" th:errors="*{titulo}"></div>
+			</div>
+
+			<div>
+				<label for="sinopsis" class="">Sinopsis :</label>
+				<textarea id="sinopsis" placeholder="Digite el sinopsis" class="form-control"
+					th:field="*{sinopsis}"></textarea>
+				<div class="invalid-feedback" th:if="${#fields.hasErrors('sinopsis')}" th:errors="*{sinopsis}"></div>
+			</div>
+
+			<div>
+				<label for="fechaEstreno" class="">Fecha de Estreno :</label>
+				<input type="date" id="fechaEstreno" placeholder="Digite la fecha de estreno" class="form-control"
+					th:field="*{fechaEstreno}">
+				<div class="invalid-feedback" th:if="${#fields.hasErrors('fechaEstreno')}" th:errors="*{fechaEstreno}">
+				</div>
+			</div>
+
+			<div>
+				<label for="youtubeTrailerId" class="">Youtube Trailer ID :</label>
+				<input type="text" id="youtubeTrailerId" placeholder="Digite la fecha de estreno" class="form-control"
+					th:field="*{youtubeTrailerId}">
+				<div class="invalid-feedback" th:if="${#fields.hasErrors('youtubeTrailerId')}"
+					th:errors="*{youtubeTrailerId}"></div>
+			</div>
+
+			<div>
+				<label for="portada" class="">Portada :</label>
+				<input type="file" id="portada" name="portada" class="form-control" th:field="*{portada}">
+				<div class="invalid-feedback" th:if="${#fields.hasErrors('portada')}" th:errors="*{portada}"></div>
+			</div>
+
+			<div>
+				<label for="generos" class="">Generos :</label>
+				<select id="generos" class="form-control" th:field="*{generos}" multiple>
+					<option th:each="genero : ${generos}" th:value="${genero.idGenero}" th:text="${genero.titulo}">
+					</option>
+				</select>
+				<div class="invalid-feedback" th:if="${#fields.hasErrors('generos')}" th:errors="*{generos}"></div>
+			</div>
+
+			<div>
+				<button type="submit" class="btn btn-primary">Guardar</button>
+			</div>
+		</form>
+	</div>
+	
+</body>
+
+</html>
