@@ -10,12 +10,15 @@
 
 <body>
 
-	<div layout:fragment="content" style="margin: 0 auto; width: 80%;">
-		<br>
-		<h2>Editar de pelicula</h2>
-		<br>
+	<div class="contendor-registrar" layout:fragment="content">
+		<div class="registrar-peli">
+			<h2>Editar de pelicula</h2>
 		<!-- Insertando formulario -->
 		<div th:insert="admin/form :: form"></div>
+		</div>
+		<div class="form-img">
+			<img src="/imagenes/film.png">
+		</div>
 	</div>
 
 </body>

@@ -8,54 +8,58 @@
 
 <body>
 
-	<div layout:fragment="form" style="margin: 0 auto; width: 80%;">
+	<div layout:fragment="form">
 		<form action="" method="post" th:object="${pelicula}" enctype="multipart/form-data">
-			<div>
-				<label for="titulo" class="">Titulo :</label>
-				<input type="text" id="titulo" placeholder="Digite el titulo" class="form-control" th:field="*{titulo}">
-				<div class="invalid-feedback" th:if="${#fields.hasErrors('titulo')}" th:errors="*{titulo}"></div>
+			<div class="form-input">
+				<label for="titulo" class="">Titulo</label>
+				<input type="text" id="titulo" placeholder="Digite el titulo" class="form-registrar" th:field="*{titulo}">
+				<div class="invalid-feedback validacion-alert" th:if="${#fields.hasErrors('titulo')}" th:errors="*{titulo}"></div>
 			</div>
 
-			<div>
-				<label for="sinopsis" class="">Sinopsis :</label>
-				<textarea id="sinopsis" placeholder="Digite el sinopsis" class="form-control"
-					th:field="*{sinopsis}"></textarea>
-				<div class="invalid-feedback" th:if="${#fields.hasErrors('sinopsis')}" th:errors="*{sinopsis}"></div>
+			<div class="form-input">
+				<label for="sinopsis" class="form-label">Sinopsis</label>
+				<textarea id="sinopsis" placeholder="Digite el sinopsis" class="form-registrar"
+					th:field="*{sinopsis}" style="resize: none; height: 120px;"></textarea>
+				<div class="invalid-feedback validacion-alert" th:if="${#fields.hasErrors('sinopsis')}" th:errors="*{sinopsis}"></div>
 			</div>
 
-			<div>
-				<label for="fechaEstreno" class="">Fecha de Estreno :</label>
-				<input type="date" id="fechaEstreno" placeholder="Digite la fecha de estreno" class="form-control"
+			<div class="form-input">
+				<label for="fechaEstreno" class="form-label">Fecha de Estreno</label>
+				<input type="date" id="fechaEstreno" placeholder="Digite la fecha de estreno" class="form-registrar"
 					th:field="*{fechaEstreno}">
-				<div class="invalid-feedback" th:if="${#fields.hasErrors('fechaEstreno')}" th:errors="*{fechaEstreno}">
+				<div class="invalid-feedback validacion-alert" th:if="${#fields.hasErrors('fechaEstreno')}" th:errors="*{fechaEstreno}">
 				</div>
 			</div>
 
-			<div>
-				<label for="youtubeTrailerId" class="">Youtube Trailer ID :</label>
-				<input type="text" id="youtubeTrailerId" placeholder="Digite la fecha de estreno" class="form-control"
+			<div class="form-input">
+				<label for="youtubeTrailerId" class="form-label">Youtube Trailer ID</label>
+				<input type="text" id="youtubeTrailerId" placeholder="Digite la fecha de estreno" class="form-registrar"
 					th:field="*{youtubeTrailerId}">
-				<div class="invalid-feedback" th:if="${#fields.hasErrors('youtubeTrailerId')}"
+				<div class="invalid-feedback validacion-alert" th:if="${#fields.hasErrors('youtubeTrailerId')}"
 					th:errors="*{youtubeTrailerId}"></div>
 			</div>
 
-			<div>
-				<label for="portada" class="">Portada :</label>
-				<input type="file" id="portada" name="portada" class="form-control" th:field="*{portada}">
-				<div class="invalid-feedback" th:if="${#fields.hasErrors('portada')}" th:errors="*{portada}"></div>
+			<div class="form-input custom-file-input" >
+				<label for="portada" class="form-label">Portada</label>
+				<div class="div-file">
+					<p>Adjuntar imagen</p>
+					<input type="file" id="portada" name="portada" class="form-registrarfile" th:field="*{portada}">
+				</div>
+				<div class="invalid-feedback validacion-alert" th:if="${#fields.hasErrors('portada')}" th:errors="*{portada}"></div>
 			</div>
 
-			<div>
-				<label for="generos" class="">Generos :</label>
-				<select id="generos" class="form-control" th:field="*{generos}" multiple>
+			<div class="form-input">
+				<label for="generos" class="form-label">Generos</label>
+				<select id="generos" class="form-registrar form-generos" th:field="*{generos}" multiple>
 					<option th:each="genero : ${generos}" th:value="${genero.idGenero}" th:text="${genero.titulo}">
 					</option>
 				</select>
-				<div class="invalid-feedback" th:if="${#fields.hasErrors('generos')}" th:errors="*{generos}"></div>
+				<div class="invalid-feedback validacion-alert" th:if="${#fields.hasErrors('generos')}" th:errors="*{generos}"></div>
 			</div>
 
-			<div>
-				<button type="submit" class="btn btn-primary">Guardar</button>
+			<div class="form-input form-buton">
+				<button type="submit" class="btn-registrar">Guardar</button>
+				<a class="nav-link" href="/admin">Regresar</a>
 			</div>
 		</form>
 	</div>

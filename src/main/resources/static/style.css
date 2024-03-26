@@ -4,7 +4,7 @@
 	--color-verder: #89D9AB;
 	--color-marron: #A6654E;
 	--color-rojo: #F26666;
-	--color-blanco : #FEFEFE;
+	--color-blanco: #FEFEFE;
 }
 
 
@@ -19,7 +19,7 @@
 body {
 	left: 0;
 	top: 0;
-	background-color: var(--color-negro) ;
+	background-color: var(--color-negro);
 	font-family: "Montserrat", sans-serif;
 }
 
@@ -150,68 +150,72 @@ footer {
 	border-radius: 6px;
 	height: 250px;
 }
+
 /*---------- CONTENIDO PELICULAS ----------*/
-.contenido-peliculas{
+.contenido-peliculas {
 	display: flex;
 	flex-direction: column;
 	gap: 15px;
 }
 
 .input-group {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
+
 /*---------- BUSQUEDA ----------*/
 .form-control {
 	margin: 25px 0px;
 	width: 550px;
-    border: none;
-    border-radius: 10px;
-    padding: 10px;
-    font-size: 16px;
+	border: none;
+	border-radius: 10px;
+	padding: 10px;
+	font-size: 16px;
 }
 
 .btn {
-    border: none;
-    border-radius: 10px;
-    padding: 10px 20px;
-    margin-left: 10px;
-    font-size: 16px;
-    background-color: var(--color-azul);
-    color: var(--color-blanco);
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+	border: none;
+	border-radius: 10px;
+	padding: 10px 20px;
+	margin-left: 10px;
+	font-size: 16px;
+	background-color: var(--color-azul);
+	color: var(--color-blanco);
+	cursor: pointer;
+	transition: background-color 0.3s ease;
 }
 
 /*---------- PAGINACIO ----------*/
 .main-paginacion {
-    text-align: center;
-    margin-top: 20px;
+	text-align: center;
+	margin-top: 20px;
 }
 
 .pagination li {
 	font-weight: bold;
-    display: inline-block;
-    margin: 0px 4px;
-    padding: 0px 10px;
-    background-color: var(--color-blanco);
-    border-radius: 3px;
-    color: var(--color-negro);
+	display: inline-block;
+	margin: 0px 4px;
+	padding: 0px 10px;
+	background-color: var(--color-blanco);
+	border-radius: 3px;
+	color: var(--color-negro);
 }
+
 .pagination li:not(a) {
-    padding: 8px 12px;
+	padding: 8px 12px;
 }
+
 .pagination li a {
-    display: contents;
-    padding: 8px 12px;
-    text-decoration: none;
-    color: var(--color-negro);
-    border-radius: 3px;
+	display: contents;
+	padding: 8px 12px;
+	text-decoration: none;
+	color: var(--color-negro);
+	border-radius: 3px;
 }
 
 /*---------- CONTENIDO PELICULAS-ADMIN ----------*/
-.contenido-admin{
+.contenido-admin {
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
@@ -219,53 +223,63 @@ footer {
 
 /*---------- TABLA ----------*/
 
-.titulo-head{
+.titulo-head {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	margin-bottom: 30px;
 }
+
 .tabla td:nth-child(2) {
-    max-width: 400px;
+	max-width: 400px;
 }
+
 .tabla {
-    width: 100%;
+	width: 100%;
 }
-.tabla th, .tabla td {
+
+.tabla th,
+.tabla td {
 	margin: 0px;
-    padding: 8px;
-   	border-bottom: 1px solid var(--color-blanco);
+	padding: 8px;
+	border-bottom: 1px solid var(--color-blanco);
 }
+
 .tabla th {
-    font-weight: bold;
-    text-align: left;
+	font-weight: bold;
+	text-align: left;
 }
-.tabla td .acciones{
+
+.tabla td .acciones {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	gap: 10px;
-	
+
 }
-.tabla td a.editar,  .tabla td a.elimar{
-	 text-decoration: none;
-	 padding: 8px 10px;
-	 width: 80%;
-	 text-align: center;
-	 border-radius: 10px;
+
+.tabla td a.editar,
+.tabla td a.elimar {
+	text-decoration: none;
+	padding: 8px 10px;
+	width: 80%;
+	text-align: center;
+	border-radius: 10px;
 }
-.tabla .info-peli{
+
+.tabla .info-peli {
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
 	justify-content: space-between;
 }
-.info-peli .titulo{
+
+.info-peli .titulo {
 	font-size: 20px;
 	font-weight: bold;
 }
 
-.tabla .generos{
+.tabla .generos {
 	background-color: var(--color-azul);
 	padding: 6px 8px;
 	margin-right: 10px;
@@ -273,24 +287,120 @@ footer {
 }
 
 .tabla td a.editar {
-    background: var(--color-verder);
-    color: var(--color-negro);
+	background: var(--color-verder);
+	color: var(--color-negro);
 }
+
 .tabla td a.elimar {
-    background: var(--color-rojo);
-    color: var(--color-blanco);
- 
+	background: var(--color-rojo);
+	color: var(--color-blanco);
+
 }
 
 .tabla img {
-    width: 100%;
-    border-radius: 6px;
-    height: 210px;
+	width: 100%;
+	border-radius: 6px;
+	height: 210px;
 }
 
+/*---------- FORMULARIO - NUEVA PELICULA ----------*/
+.contendor-registrar {
+	display: flex;
+	align-items: center;
+	gap: 50px;
+}
 
+.contendor-registrar .registrar-peli {
+	width: 50%;
+}
 
+.contendor-registrar .form-img {
+	width: 50%;
+	text-align: end;
+}
 
+.contendor-registrar .form-img img {
+	width: 90%;
+}
+.contendor-registrar h2{
+	margin-bottom: 30px;
+}
 
+/*---------- FORMULARIO ----------*/
+.form-input {
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+}
 
+.form-input .form-label {
+	margin-top: 15px;
+}
 
+.validacion-alert {
+	margin-top: 5px;
+	color: var(--color-rojo);
+}
+
+.form-registrar {
+	border: none;
+	border-radius: 10px;
+	padding: 10px;
+	font-size: 16px;
+	margin-top: 10px;
+}
+.btn-registrar {
+	width: 25%;
+	display:block  !important;
+	border: none;
+	border-radius: 10px;
+	padding: 10px 20px;
+	margin-top: 20px;
+	font-size: 16px;
+	background-color: var(--color-azul);
+	color: var(--color-blanco);
+	cursor: pointer;
+}
+.div-file{
+	margin-top: 10px;
+	border: 10px;
+	color: var(--color-negro);
+	position: relative;
+	background-color: var(--color-blanco);
+	width: 100%;
+	padding: 10px 20px;
+	border-radius: 10px;
+	cursor: pointer;
+}
+.div-file p{
+	text-align: center;
+	cursor: pointer;
+}
+.form-registrarfile{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	cursor: pointer;
+}
+.form-buton{
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+}
+.form-buton a{
+	width: 25%;
+	text-align: center;	
+	border: none;
+	border-radius: 10px;
+	padding: 10px 20px;
+	margin-top: 20px;
+	font-size: 16px;
+	background-color: var(--color-verder);
+	color: var(--color-negro);
+	cursor: pointer;
+}
